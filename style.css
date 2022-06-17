@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root{
+  --nav-height:10vh;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: var(--nav-height);
+  width: 100vw;
+  z-index: 1;
+  background-color: #cbddd1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sec1{
+  background-image: url("./public/images/landingPic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sec{
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  margin-top: 10vh;
+}
+
