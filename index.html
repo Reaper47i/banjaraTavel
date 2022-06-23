@@ -2,23 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo/tabIcon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&family=Source+Code+Pro:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
     <title>Banjara</title>
   </head>
   <body>
     <nav>
-      <div class="logo">
-        <object
-          data="/public/logo/Banjara1.svg"
-          width="200"
-          height="80"
-        ></object>
+      <div class="logo flexCenter">
+        <object data="/logo/Banjara1.svg" width="200" height="80"></object>
       </div>
-      <div class="navContents">right</div>
+      <div id="navContents" class="normalNavC flexCenter">
+        <div class="navBtn">Home</div>
+        <div class="navBtn">Destinations</div>
+        <div class="navBtn">Bookings</div>
+        <div class="navBtn">About</div>
+        <button id="loginBtn" class="navBtn">Login</button>
+      </div>
     </nav>
-    <section class="sec" id="sec1"></section>
+    <section class="sec" id="sec1">
+      <div class="slogan">
+        <p>Discover India</p>
+        <div class="triCol">
+          <span id="sp1"></span><span id="sp2"></span><span id="sp3"></span>
+        </div>
+      </div>
+      <div class="tilesContainer">
+        <div class="tiles">
+          <p>Find the latest prices for your next Destination</p>
+          <button>Bookings</button>
+        </div>
+        <div class="tiles">
+          <p>
+            Find the best hotels for your stay. Also new homestay option for
+            budget oriented travellers
+          </p>
+          <button>Hotels & Homestays</button>
+        </div>
+        <div class="tiles">
+          <p>Discover lastest packages for you and your loved ones</p>
+          <button>Travel Packages</button>
+        </div>
+      </div>
+    </section>
+    <section class="sec" id="sec2">
+      <p id="sec2Title">Choose from the most exotic destinations</p>
+      <div class="destCont">
+        <div class="destTile">
+          <p>From the snowcaped peaks of Leh Ladak and Uttrakhand</p>
+          <img src="/images/himalayasNorthIndia.jpg" alt="morthIndia" />
+          <img src="/images/tirundNorth.jpg" alt="tirund" />
+        </div>
+        <div class="destTile">
+          <p>The Amazing beauty of Sikkim</p>
+          <img src="/images/sikkimNorthEast.jpg" alt="Sikkim" />
+        </div>
+        <div class="destTile">
+          <p>To the exciting beaches of Goa</p>
+          <img src="/images/goa.jpg" alt="goa" />
+        </div>
+        <div class="destTile">
+          <p>The hillstations and Backwaters of Southern India</p>
+          <img src="/images/munnar.jpg" alt="munnar" />
+          <img src="/images/backwatersKerela.jpg" alt="kerela" />
+        </div>
+        <div class="destTile">
+          <p>The majestic Forts and Old monuments of West India</p>
+          <img src="/images/udaipur.jpg" alt="" />
+        </div>
+        <div class="destTile">
+          <p>To tropic lush green hills and waterfalls of NorthEast India</p>
+          <img src="/images/meghalaya.jpg" alt="" />
+          <img src="/images/dzukuValley.jpg" alt="" />
+        </div>
+      </div>
+    </section>
     <footer>contacts and about</footer>
     <script type="module" src="/main.js"></script>
   </body>
