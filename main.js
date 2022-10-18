@@ -7,6 +7,9 @@
 //   }
 // }
 
+// The following functions are used for checking the veiwport
+// config if its mobile or desktop or tablet
+
 function resizeWindow() {
   let width = window.innerWidth;
   if (width <= 679) {
@@ -15,5 +18,7 @@ function resizeWindow() {
     document.getElementById("navContents").className = "normalNavC flexCenter";
   }
 }
-// addEventListener("DOMContentLoaded", setMob);
+addEventListener("DOMContentLoaded", resizeWindow);
 addEventListener("resize", resizeWindow);
+
+// let user = getElementById("loginBtn")
