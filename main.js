@@ -1,19 +1,7 @@
-// function setMob() {
-//   let width = window.innerWidth;
-//   if (width <= 679) {
-//     document.getElementById("navContents").className = "mobNavC";
-//   } else {
-//     document.getElementById("navContents").className = "normalNavC flexCenter";
-//   }
-// }
-
-// The following functions are used for checking the veiwport
-// config if its mobile or desktop or tablet
-
 function resizeWindow() {
   let width = window.innerWidth;
   if (width <= 679) {
-    document.getElementById("navContents").className = "mobNavC";
+    document.getElementById("navContents").className = "closeNavC";
   } else {
     document.getElementById("navContents").className = "normalNavC flexCenter";
   }
@@ -21,4 +9,25 @@ function resizeWindow() {
 addEventListener("DOMContentLoaded", resizeWindow);
 addEventListener("resize", resizeWindow);
 
-// let user = getElementById("loginBtn")
+document.getElementById("loginBtn").addEventListener("click", loginBox);
+
+function loginBox() {
+  document.getElementById("LoginBox").style.display = "block";
+}
+
+document.getElementById("closeBtn").addEventListener("click", closeLogin);
+
+function closeLogin() {
+  document.getElementById("LoginBox").style.display = "none";
+}
+
+// open sidebar
+document.getElementById("topbarMenu").addEventListener("click", () => {
+  document.getElementById("navContents").className = "openMobNavC";
+});
+
+// close sidebar
+
+document.getElementById("mobNavClose").addEventListener("click", () => {
+  document.getElementById("navContents").className = "closeNavC";
+});

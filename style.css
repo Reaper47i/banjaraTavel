@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -8,91 +8,188 @@
 
 /* ------>> */
 
-:root{
-  --nav-height:12vh;
-  --font-main:'Source Code Pro', monospace;
-  --font-sec:'Nunito', sans-serif;
-  --font-ter:'Dancing Script', cursive;
-  --font-qad:'Kalam', cursive;
-  --background-colr1:rgb(212, 232, 217);
-  --text-col-g:rgb(14, 69, 39);
-  --text-col-db:rgb(6, 18, 42);
+:root {
+  --nav-height: 8vh;
+  --font-main: "Source Code Pro", monospace;
+  --font-sec: "Nunito", sans-serif;
+  --font-ter: "Dancing Script", cursive;
+  --font-qad: "Kalam", cursive;
+  --nav-bg-color: #cbddd1;
+  --background-colr1: rgb(212, 232, 217);
+  --text-col-g: rgb(14, 69, 39);
+  --text-col-db: rgb(6, 18, 42);
 }
 
-.flexCenter{
+.flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.flexCol{
+.flexCol {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.wh100{
+.wh100 {
   width: 100%;
   height: 100%;
 }
 
-
 /* xx------xx  */
 
-
 /* Components */
-
-nav{
+nav {
   position: fixed;
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   min-height: var(--nav-height);
   width: 100vw;
   z-index: 1;
-  background-color: #cbddd1;
-  
-}
-.normalNavC{
-  gap: 1rem;
+  background-color: var(--nav-bg-color);
 }
 
-.mobNavC{
+.logo {
+  padding-left: 10vw;
+}
+.normalNavC {
+  gap: 1rem;
+  padding-right: 10vw;
+}
+
+.openMobNavC {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #cbddd1;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.closeNavC {
   display: none;
 }
-.navBtn{
-  padding:0.5rem 0.5rem;
+
+.navBtn {
+  padding: 0.5rem 0.5rem;
   font-family: var(--font-main);
   font-size: 1.05rem;
   height: 100%;
-
+}
+.clBtn {
+  color: rgb(168, 26, 26);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
-#loginBtn{
+#loginBtn {
   border: none;
   background-color: transparent;
 }
 
-#loginBtn:hover{
+#loginBtn:hover {
   cursor: pointer;
 }
 
-
-.navBtn:hover{
+.navBtn:hover {
   cursor: default;
   box-shadow: 0px 4px 0px 0px rgb(17, 165, 84);
-  transition:0.3s ease-out all;
+  transition: 0.3s ease-out all;
 }
 
-@media only screen and (max-width:500px){
-  .nav{
+#topbarMenu {
+  display: none;
+}
+
+@media only screen and (max-width: 450px) {
+  nav {
     justify-content: space-between;
+  }
+  nav div {
+    padding: 0 1rem;
+  }
+  #topbarMenu {
+    display: block;
+  }
+  .clBtn {
+    display: flex;
   }
 }
 
-#sec1{
+/* Login Pop-Up */
+
+#LoginBox {
+  display: none;
+}
+
+.LoginWrapper {
+  position: fixed;
+  top: 20vh;
+  left: 20vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: fit-content;
+  padding: 1rem;
+  background-color: #cbddd1;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  font-family: var(--font-main);
+}
+.LoginBnr {
+  font-size: 2rem;
+}
+.LoginWrapper div {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.LoginWrapper div input {
+  padding: 1rem;
+  box-sizing: border-box;
+  border: none;
+  width: 70%;
+}
+
+.LoginWrapper div button {
+  width: 70%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.LoginWrapper a {
+  text-decoration: none;
+  color: var(--text-col-g);
+  font-size: 1rem;
+}
+
+.LoginWrapper div input:focus-visible {
+  outline: none;
+}
+@media only screen and (max-width: 640px) {
+}
+#closeBtn {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  padding-right: 1rem;
+  right: 0;
+  top: 0;
+}
+
+/* ----->><<----- */
+
+#sec1 {
   background-image: url("/images/landingPic.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -101,11 +198,10 @@ nav{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: var(--nav-height);
+  /* margin-top: var(--nav-height); */
 }
 
-
-.slogan{
+.slogan {
   width: max-content;
   display: flex;
   flex-direction: column;
@@ -115,50 +211,50 @@ nav{
   padding: 1rem;
   font-size: calc(2rem + 7vw);
   text-align: center;
-  margin-bottom: 1.5rem;
-  
+  /* margin-bottom: 5vh; */
 }
 
-.triCol{
+.triCol {
   width: 100%;
   height: 100%;
   display: flex;
 }
 
-#sp1,#sp2,#sp3{
+#sp1,
+#sp2,
+#sp3 {
   width: 100%;
   height: 5px;
 }
 
-#sp1{
+#sp1 {
   background-color: orangered;
 }
-#sp2{
+#sp2 {
   background-color: rgb(178, 230, 237);
 }
-#sp3{
+#sp3 {
   background-color: rgb(11, 210, 11);
 }
 
-
-.sec{
-  padding:1rem 0;
+.sec {
+  /* padding: 1rem 0; */
   position: relative;
   width: 100%;
   height: calc(100vh - var(--nav-height));
 }
 
-
-.tilesContainer{
+.tilesContainer {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 10vh;
 }
 
-.tiles{
+.tiles {
   font-family: var(--font-sec);
   display: grid;
   text-align: center;
@@ -172,31 +268,29 @@ nav{
   backdrop-filter: blur(1px);
 }
 
-.tiles p{
+.tiles p {
   font-size: calc(0.5rem + 0.5vw);
   font-weight: 600;
   padding: 0.5rem;
   color: var(--text-col-g);
 }
 
-.tiles button{
+.tiles button {
   border-radius: 0px 0px 8px 8px;
   width: 100%;
   height: 100%;
   border: none;
-  background: #FF7600;
+  background: #ff7600;
   color: antiquewhite;
   font-size: calc(8px + 0.5vw);
 }
 
 /* responisve design */
-@media only screen and (max-width:640px) {
-  .slogan{
-
+@media only screen and (max-width: 640px) {
+  .slogan {
     margin-bottom: 2rem;
-    
   }
-  .tilesContainer{
+  .tilesContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,15 +298,15 @@ nav{
     gap: 2rem;
     margin-bottom: 0;
   }
-  .tiles{
+  .tiles {
     display: flex;
     height: 8vh;
     width: 100%;
   }
-  .tiles p{
+  .tiles p {
     display: none;
   }
-  .tiles button{
+  .tiles button {
     font-size: 1.2rem;
     border-radius: 4px;
     width: 100%;
@@ -222,7 +316,7 @@ nav{
 
 /* section 2 => Destinations */
 
-#sec2{
+#sec2 {
   background-color: var(--background-colr1);
   font-family: var(--font-ter);
   text-align: center;
@@ -234,7 +328,7 @@ nav{
   height: max-content;
 }
 
-#sec2Title{
+#sec2Title {
   margin: 1rem 0;
   color: var(--text-col-g);
   font-size: calc(1.7rem + 2vw);
@@ -242,7 +336,7 @@ nav{
   width: 100%;
 }
 
-.destCont{
+.destCont {
   width: 100%;
   display: grid;
   grid-template-rows: auto(1fr);
@@ -257,52 +351,50 @@ nav{
   padding: 0 1rem;
 }
 
-.destCont img{
+.destCont img {
   width: 100%;
   height: 100%;
 }
 
-.destTile{
+.destTile {
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
-   rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   display: inherit;
   gap: 1rem;
 }
 
-@media only screen and (min-width:640px){
-  .destCont{
+@media only screen and (min-width: 640px) {
+  .destCont {
     width: 100%;
     gap: 10vh;
   }
-  #sec2Title{
+  #sec2Title {
     margin: 8vh 0;
   }
-  
-  .destTile{
+
+  .destTile {
     width: 70%;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto(1fr);
     place-items: center;
     gap: 1rem;
   }
-  .destTile p{
+  .destTile p {
     font-size: calc(10px + 1vw);
-    text-decoration: underline #FF7600;
+    text-decoration: underline #ff7600;
   }
 
-  .destTile img{
+  .destTile img {
     aspect-ratio: 16/10;
   }
 
-  #tile1 p{
+  #tile1 p {
     grid-column: span 2;
   }
-  #tile4 p{
+  #tile4 p {
     grid-column: span 2;
   }
-  #tile6 p{
+  #tile6 p {
     grid-column: span 2;
   }
-  
 }

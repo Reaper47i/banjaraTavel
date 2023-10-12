@@ -16,15 +16,25 @@
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
     <title>Banjara</title>
   </head>
   <body>
+    <!-- Navbar -->
     <nav>
       <div class="logo flexCenter">
-        <object data="/logo/Banjara1.svg" width="200" height="80"></object>
+        <img src="/logo/banjara5.png" width="80px" alt="logoPic" />
+        <!-- <object data="/logo/Banjara1.svg" width="200" height="80"></object> -->
       </div>
+      <div id="topbarMenu"><i class="ri-menu-line ri-2x"></i></div>
       <div id="navContents">
+        <div id="mobNavClose" class="clBtn">
+          <i class="ri-close-line ri-2x"></i>
+        </div>
         <div class="navBtn">Home</div>
         <div class="navBtn">Destinations</div>
         <div class="navBtn">Bookings</div>
@@ -32,6 +42,29 @@
         <button id="loginBtn" class="navBtn">Login</button>
       </div>
     </nav>
+    <!-- Login box -->
+    <div id="LoginBox" class="LoginWrapper">
+      <div class="LoginBnr">
+        <p>Login</p>
+      </div>
+      <div>
+        <div id="closeBtn" style="color: rgb(168, 26, 26)">
+          <i class="ri-close-line ri-2x"></i>
+        </div>
+      </div>
+      <div>
+        <input type="text" placeholder="Username" />
+      </div>
+      <div><input type="password" placeholder="Password" /></div>
+      <div>
+        <a href="">Forgot Password</a>
+      </div>
+      <div><button>Sign In</button></div>
+      <div>
+        <a href="">Sign Up</a>
+      </div>
+    </div>
+    <!-- Body sections : Hero section-->
     <section class="sec" id="sec1">
       <div class="slogan">
         <p>Discover India</p>
